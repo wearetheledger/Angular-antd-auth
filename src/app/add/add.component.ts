@@ -15,6 +15,7 @@ export class AddComponent implements OnInit {
   ngOnInit() {}
 
   addOne() {
+    // change state
     this.ngRedux.dispatch({ type: ADD_DATA, data: this.newItem });
   }
 }

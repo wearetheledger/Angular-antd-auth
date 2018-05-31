@@ -21,9 +21,15 @@ import { select, NgRedux } from '@angular-redux/store';
   ],
 })
 export class HomeComponent implements OnInit {
+  // You can directly listen to props in the state
   @select() data;
 
-  constructor() {}
+  constructor(private ngRedux: NgRedux<IAppState>) {
+    // example state listener
+    this.ngRedux.select('data').subscribe((data) => {
+      console.log(data);
+    });
+  }
 
   ngOnInit() {}
 }

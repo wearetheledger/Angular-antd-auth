@@ -13,9 +13,13 @@ import { ROUTES } from './app.routes';
 import { NgRedux, NgReduxModule } from '@angular-redux/store';
 import { HomeComponent } from './home/home.component';
 import { AddComponent } from './add/add.component';
+import { CallbackComponent } from './callback/callback.component';
+import { AuthService } from './auth/auth.service';
+import { AuthGuard } from './auth/auth.guard';
+import { PrivateComponent } from './private/private.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, AddComponent],
+  declarations: [AppComponent, HomeComponent, AddComponent, CallbackComponent, PrivateComponent],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
@@ -26,7 +30,7 @@ import { AddComponent } from './add/add.component';
     RouterModule.forRoot(ROUTES),
     NgReduxModule,
   ],
-  providers: [],
+  providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent],
 })
 export class AppModule {

@@ -1,6 +1,7 @@
 import { Component, ViewChild, TemplateRef, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { select } from '@angular-redux/store';
+import { AuthService } from './auth/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -16,7 +17,10 @@ export class AppComponent implements OnInit {
   @ViewChild('trigger') customTrigger: TemplateRef<void>;
   @select() data;
 
-  constructor() {}
+  constructor(public authService: AuthService) {
+    authService.handleAuthentication();
+
+  }
 
   changeTrigger(): void {
     this.triggerTemplate = this.customTrigger;

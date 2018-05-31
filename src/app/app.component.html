@@ -19,6 +19,27 @@
           </span>
         </span>
       </li>
+      <li nz-menu-item [routerLink]="['private']" routerLinkActive="ant-menu-item-selected">
+        <span>
+          <i class="anticon anticon-key"></i>
+          <span class="nav-text">Protected Route
+          </span>
+        </span>
+      </li>
+      <li *ngIf="!authService.isAuthenticated()" nz-menu-item (click)="authService.login()">
+        <span>
+          <i class="anticon anticon-login"></i>
+          <span class="nav-text">Log in
+          </span>
+        </span>
+      </li>
+      <li *ngIf="authService.isAuthenticated()" nz-menu-item (click)="authService.logout()">
+        <span>
+          <i class="anticon anticon-logout"></i>
+          <span class="nav-text">Log out
+          </span>
+        </span>
+      </li>
     </ul>
   </nz-sider>
   <nz-layout [ngStyle]="{'margin-left': isCollapsed ? '0px' : '200px'}">

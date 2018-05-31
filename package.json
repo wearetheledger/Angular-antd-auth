@@ -32,7 +32,8 @@
     "redux": "^3.6.0",
     "redux-logger": "^3.0.1",
     "redux-observable": "^0.14.1",
-    "flux-standard-action": "^1.2.0"
+    "flux-standard-action": "^1.2.0",
+    "auth0-js": "^9.0.0"
   },
   "devDependencies": {
     "@angular/cli": "1.6.5",
