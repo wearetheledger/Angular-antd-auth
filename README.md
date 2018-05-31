@@ -15,5 +15,6 @@ yarn start
 ```
 
 This boilerplate is built using:
-[ng-ant-design](https://ng.ant.design/components/card/zh)
-[ng-redux-store](https://github.com/angular-redux/store)
+
+- [ng-ant-design](https://ng.ant.design/components/card/zh)
+- [ng-redux-store](https://github.com/angular-redux/store)
