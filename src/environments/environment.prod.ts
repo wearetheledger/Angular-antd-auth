@@ -3,4 +3,5 @@ export const environment = {
   clientID: '',
   domain: '',
   callbackurl: '',
+  serverEndpoint: '',
 };
