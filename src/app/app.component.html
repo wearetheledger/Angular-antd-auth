@@ -1,0 +1,27 @@
+<nz-layout>
+  <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" [nzCollapsedWidth]="0" [nzBreakpoint]="'lg'" style="overflow: auto; height: 100vh; position: fixed; left: 0">
+    <div class="logo">
+      <img src="assets/black@1x.png" width="150" alt="">
+    </div>
+    <ul nz-menu [nzTheme]="'dark'" [nzMode]="isCollapsed?'vertical':'inline'">
+      <li nz-menu-item [routerLink]="['home']" routerLinkActive="ant-menu-item-selected">
+        <span>
+          <i class="anticon anticon-bars"></i>
+          <span class="nav-text">Home
+            <nz-badge [nzCount]="(data | async).length" [nzStyle]="{ backgroundColor: '#fff',color: '#999', boxShadow: '0 0 0 1px #d9d9d9 inset' }"></nz-badge>
+          </span>
+        </span>
+      </li>
+      <li nz-menu-item [routerLink]="['add']" routerLinkActive="ant-menu-item-selected">
+        <span>
+          <i class="anticon anticon-plus"></i>
+          <span class="nav-text">Add
+          </span>
+        </span>
+      </li>
+    </ul>
+  </nz-sider>
+  <nz-layout [ngStyle]="{'margin-left': isCollapsed ? '0px' : '200px'}">
+    <router-outlet></router-outlet>
+  </nz-layout>
+</nz-layout>

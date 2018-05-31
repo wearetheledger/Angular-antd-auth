@@ -1,0 +1,9 @@
+<nz-header style="background: #fff; padding-left:15px;">
+  <i class="anticon anticon-plus"></i> Add
+</nz-header>
+<nz-content style="margin:24px 16px 0;">
+  <div style="padding:24px; background: #fff; min-height: 360px;">
+    <nz-input-number [(ngModel)]="newItem" [nzMin]="1" [nzMax]="100" [nzStep]="1"></nz-input-number>
+    <button nz-button nzType="primary" (click)="addOne()">Add number</button>
+  </div>
+</nz-content>
